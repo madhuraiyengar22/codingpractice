@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie API UI</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Movie API UI</h1>
+            <p>Use the controls below to call the Express movie API endpoints.</p>
+        </header>
+
+        <div class="card">
+            <button id="refreshMovies">Refresh Movie List</button>
+        </div>
+
+        <div class="card">
+            <h2>Movie List</h2>
+            <div style="overflow-x:auto">
+                <table id="moviesTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Director</th>
+                            <th>Year</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <h2>Create Movie</h2>
+                <label for="createTitle">Title</label>
+                <input id="createTitle" placeholder="Inception" />
+                <label for="createDirector">Director</label>
+                <input id="createDirector" placeholder="Christopher Nolan" />
+                <label for="createYear">Year</label>
+                <input id="createYear" type="number" placeholder="2010" />
+                <button id="createMovie">Create</button>
+            </div>
+
+            <div class="card">
+                <h2>Get Movie by ID</h2>
+                <label for="getId">Movie ID</label>
+                <input id="getId" type="number" placeholder="1" />
+                <button id="getMovie">Fetch Movie</button>
+            </div>
+
+            <div class="card">
+                <h2>Update Movie</h2>
+                <label for="updateId">Movie ID</label>
+                <input id="updateId" type="number" placeholder="1" />
+                <label for="updateTitle">Title</label>
+                <input id="updateTitle" placeholder="New Title" />
+                <label for="updateDirector">Director</label>
+                <input id="updateDirector" placeholder="New Director" />
+                <label for="updateYear">Year</label>
+                <input id="updateYear" type="number" placeholder="2025" />
+                <button id="updateMovie">Update</button>
+            </div>
+
+            <div class="card">
+                <h2>Delete Movie</h2>
+                <label for="deleteId">Movie ID</label>
+                <input id="deleteId" type="number" placeholder="1" />
+                <button id="deleteMovie">Delete</button>
+
+                <h3>Bulk Delete</h3>
+                <label for="deleteIds">IDs (comma-separated)</label>
+                <input id="deleteIds" placeholder="1, 2, 3" />
+                <button id="deleteMovies">Delete Multiple</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Response</h2>
+            <pre id="responseOutput">No response yet.</pre>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

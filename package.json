@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1"
+  },
+  "scripts": {
+    "start": "nodemon app3.js"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
