@@ -22,7 +22,7 @@ const asyncFunction2 = () => {
     return new Promise(( resolve, reject) => {
         setTimeout(() => {
             console.log("Step 2b: inside asyncFunction2");
-            reject({ message: "Async2 operation failed" });           // simulating an async operation and then calling the callback with a result ex: database
+            resolve({ message: "Async2 operation failed" });           // simulating an async operation and then calling the callback with a result ex: database
         }, 1000);
     });
 };
@@ -65,16 +65,16 @@ const asyncFunctionPromise1 = () => {
 //     };
 
 // PROMISE CHAINING - 16 sec
-// const main = () => {
-//     console.log("Step 1: main function started ");
+const main = () => {
+    console.log("Step 1: main function started ");
 
-//     asyncFunction1()
-//     .then(asyncFunction2)
-//     .then(asyncFunction3)
-//     .then(() => {
-//         console.log("Step 3: All done!!");
-//     })
-// }
+    asyncFunction1()
+    .then(asyncFunction2)
+    .then(asyncFunction3)
+    .then(() => {
+        console.log("Step 3: All done!!");
+    })
+}
 
 // PROMISE ALL - 10 sec - Module 4 - Deep dive into Async - 1:47:00
 // const main = () => {
@@ -144,18 +144,18 @@ const asyncFunctionPromise1 = () => {
 // }
 
 // PROMISE.ANY - GIVES THE FIRST SUCCESSFUL RESULT OR ALL REJECTIONS
-const main = () => {
-    console.log("Step 1: main function started ");
+// const main = () => {
+//     console.log("Step 1: main function started ");
 
-    Promise.any([
-        asyncFunction1(),
-        asyncFunction2(),
-        asyncFunction3()
-    ]).then((winner) => {
-        console.log("Step 3: The first successful async operation completed:", winner);
-    }).catch((error) => {
-        console.error("Step 3: All async operations failed:", error);
-    });
-}
+//     Promise.any([
+//         asyncFunction1(),
+//         asyncFunction2(),
+//         asyncFunction3()
+//     ]).then((winner) => {
+//         console.log("Step 3: The first successful async operation completed:", winner);
+//     }).catch((error) => {
+//         console.error("Step 3: All async operations failed:", error);
+//     });
+// }
 
 main(); 

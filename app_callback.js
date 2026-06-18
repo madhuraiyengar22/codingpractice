@@ -31,6 +31,6 @@ const main = () => {
         });
     });
     console.log("Step 4: main function continues without waiting for asyncFunction");
-    };
+};
 
 main();
